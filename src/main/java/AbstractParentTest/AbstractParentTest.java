@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.MainPage;
 import pages.SERP;
+import parentPage.ParentPage;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -17,8 +18,9 @@ import java.util.concurrent.TimeUnit;
 public class AbstractParentTest {
     WebDriver webDriver;
     Logger logger = Logger.getLogger(getClass());
-   protected MainPage mainPage;
-   protected SERP serp;
+    protected MainPage mainPage;
+    protected SERP serp;
+    public ParentPage parentPage;
 
     @Before
     public void setUp(){
@@ -26,8 +28,10 @@ public class AbstractParentTest {
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         webDriver = new ChromeDriver();
 
+
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        parentPage = new ParentPage (webDriver);
 //        mainPage = new MainPage(webDriver);
 //        cartPage = new CartPage(webDriver);
         //homePage = new HomePage(webDriver);

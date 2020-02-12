@@ -5,7 +5,7 @@ import parentPage.ParentPage;
 
 public class JDP extends ParentPage {
     public JDP(WebDriver webDriver, String partUrl) {
-        super(webDriver, partUrl);
+        super(webDriver);
     }
 
 }

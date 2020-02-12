@@ -8,14 +8,33 @@ import parentPage.ParentPage;
 
 public class SERP extends ParentPage {
     public SERP(WebDriver webDriver, String partUrl) {
-        super(webDriver, partUrl);
+        super(webDriver);
     }
+    @FindBy(xpath = "//input[@id='tbKeywords']")
+    public WebElement keyWordField;
+    @FindBy(xpath = "//input[@id='tbRegion']")
+    public WebElement regionField;
+    @FindBy (xpath = "//input[@id='lbSearch']")
+    public WebElement submitSearchButton;
 
     public void openPage() {
         try {
-            webDriver.get("http://v3.test.itpmgroup.com/");
+            webDriver.get(configProperties.prod_url());
         } catch (Exception e) {
             Assert.fail("Can not work with browser");
         }
 
-    }}
+    }
+
+    public void clearFields(WebElement element) {
+        actionsWithElements.clearFields();
+    }
+
+    public void inputKeyword() {
+        actionsWithElements.typeText("QA");
+    }
+
+    public void submitSearch() {
+        actionsWithElements.clickElement(submitSearchButton);
+    }
+}

@@ -16,14 +16,9 @@ public class ParentPage {
     String stage_Url;
 
 
-    public ParentPage(WebDriver webDriver, String partUrl) {
+    public ParentPage(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
 
-    @FindBy(xpath = "//input[@id='tbKeywords']")
-    protected WebElement keyWordField;
-    @FindBy(xpath = "//input[@id='tbRegion']")
-    protected WebElement regionField;
-    @FindBy (xpath = "//input[@id='lbSearch']")
-    private WebElement submitSearchButton;
+
 }
