@@ -7,6 +7,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.MainPage;
+import pages.SERP;
+
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
@@ -14,8 +17,8 @@ import java.util.concurrent.TimeUnit;
 public class AbstractParentTest {
     WebDriver webDriver;
     Logger logger = Logger.getLogger(getClass());
-//    protected MainPage mainPage;
-//    protected CartPage cartPage;
+   protected MainPage mainPage;
+   protected SERP serp;
 
     @Before
     public void setUp(){
