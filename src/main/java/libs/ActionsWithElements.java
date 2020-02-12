@@ -19,8 +19,11 @@ public class ActionsWithElements {
     public void typeText(WebElement element, String text){
         element.sendKeys(text);
     }
-
+    public void clickElement(WebElement element){
+        element.click();
+    }
     public void clearFields (WebElement webElement, String text) {
         webElement.clear();
-}}
+    }
+}
 
