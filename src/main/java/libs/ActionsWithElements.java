@@ -2,6 +2,7 @@ package libs;
 
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ActionsWithElements {
@@ -14,5 +15,8 @@ public class ActionsWithElements {
         webDriverWait_10 = new WebDriverWait(webDriver, configProperties.TIME_FOR_EXPLICIT_WAIT_LOW());
         webDriverWait_15 = new WebDriverWait(webDriver, 15);
     }
-}
+
+    public void clearFields (WebElement webElement, String text) {
+        webElement.clear();
+}}
 

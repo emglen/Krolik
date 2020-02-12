@@ -9,7 +9,5 @@ public class MainPage extends ParentPage {
     public MainPage(WebDriver webDriver, String partUrl) {
         super(webDriver, partUrl);
     }
-    @FindBy (xpath = "//input[@id='tbKeywords']")
-    private WebElement keyWordField;
 
 }
