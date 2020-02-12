@@ -4,7 +4,8 @@ import libs.ActionsWithElements;
 import libs.ConfigProperties;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
-import java.util.logging.Logger;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 
 public class ParentPage {
@@ -17,5 +18,12 @@ public class ParentPage {
 
     public ParentPage(WebDriver webDriver, String partUrl) {
         this.webDriver = webDriver;
+    }
 
-}}
+    @FindBy(xpath = "//input[@id='tbKeywords']")
+    protected WebElement keyWordField;
+    @FindBy(xpath = "//input[@id='tbRegion']")
+    protected WebElement regionField;
+    @FindBy (xpath = "//input[@id='lbSearch']")
+    private WebElement submitSearchButton;
+}

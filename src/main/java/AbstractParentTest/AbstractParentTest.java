@@ -23,7 +23,6 @@ public class AbstractParentTest {
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         webDriver = new ChromeDriver();
 
-//        webDriver = new FirefoxDriver();
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 //        mainPage = new MainPage(webDriver);
