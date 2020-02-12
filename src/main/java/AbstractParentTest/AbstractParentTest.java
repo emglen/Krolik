@@ -24,7 +24,7 @@ public class AbstractParentTest {
 
     @Before
     public void setUp(){
-        File file = new File("./src/driver/chromedriver");
+        File file = new File("./src/driver/chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         webDriver = new ChromeDriver();
 
