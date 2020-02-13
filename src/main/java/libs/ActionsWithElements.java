@@ -16,14 +16,14 @@ public class ActionsWithElements {
         webDriverWait_15 = new WebDriverWait(webDriver, 15);
     }
 
-    public void typeText(String text){
-       // element.sendKeys(text);
+    public void typeText(WebElement webElement,String text){
+       webElement.sendKeys(text);
     }
-    public void clickElement(WebElement element){
-        element.click();
+    public void clickElement(WebElement webElement){
+        webElement.click();
     }
-    public void clearFields() {
-        //webElement.clear();
+    public void clearFields(WebElement webElement) {
+        webElement.clear();
     }
 }
 

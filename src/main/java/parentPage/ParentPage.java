@@ -6,6 +6,7 @@ import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 
 public class ParentPage {
@@ -16,9 +17,16 @@ public class ParentPage {
     String stage_Url;
 
 
-    public ParentPage(WebDriver webDriver) {
+    public ParentPage(WebDriver webDriver, String partUrl) {
         this.webDriver = webDriver;
+        prod_Url = configProperties.prod_url(); //вытягивам переменную из файлика
+        // PageFactory.initElements(webDriver, this);
+        actionsWithElements = new ActionsWithElements(webDriver);
+
     }
 
 
+    public ParentPage(WebDriver webDriver) {
+
+    }
 }

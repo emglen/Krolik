@@ -2,6 +2,8 @@ package AbstractParentTest;
 
 
 import com.sun.istack.internal.logging.Logger;
+import libs.ConfigProperties;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -21,6 +23,8 @@ public class AbstractParentTest {
     protected MainPage mainPage;
     protected SERP serp;
     public ParentPage parentPage;
+    protected static ConfigProperties configProperties =
+            ConfigFactory.create(ConfigProperties.class);
 
     @Before
     public void setUp(){
@@ -45,7 +49,7 @@ public class AbstractParentTest {
         webDriver.quit();
     }
 
-    protected void checkExpectedResult(String message, boolean actualResult) {
-        Assert.assertEquals(message, true, actualResult);
-    }
+//    protected void checkExpectedResult(String message, boolean actualResult) {
+//        Assert.assertEquals(message, true, actualResult);
+//    }
 }

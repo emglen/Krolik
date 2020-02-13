@@ -27,11 +27,11 @@ public class SERP extends ParentPage {
     }
 
     public void clearFields(WebElement element) {
-        actionsWithElements.clearFields();
+        actionsWithElements.clearFields(keyWordField);
     }
 
     public void inputKeyword() {
-        actionsWithElements.typeText("QA");
+        actionsWithElements.typeText(keyWordField,"QA");
     }
 
     public void submitSearch() {
