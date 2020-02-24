@@ -27,7 +27,9 @@ public class SERP extends ParentPage {
     public WebElement crazyPopupYesButton;
     @FindBy (xpath = "//span[@class='button disagree_button disagree_button-js']")
     public WebElement crazyPopupNoButton;
+
     List<WebElement> keywordTextInVacantionsTitle=webDriver.findElements(By.xpath("//*[@id='h2Position']/b"));
+    List<WebElement> autocompleteSuggestion=webDriver.findElements(By.xpath("//div[@class='autocomplete-suggestion']"));
 
 
     public void openPage() {
@@ -42,6 +44,15 @@ public class SERP extends ParentPage {
         for(WebElement element: keywordTextInVacantionsTitle){
             String tmp=element.getText();
             Assert.assertEquals(tmp,tmp.contains(title));
+        }
+    }
+    public void autocompeteSuggestionClick(String title){
+        for(WebElement element: autocompleteSuggestion){
+            String tmp=element.getText();
+            if(tmp==title){
+                element.click();
+                break;
+            }
         }
     }
 }
