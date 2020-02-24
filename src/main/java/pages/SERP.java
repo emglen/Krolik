@@ -33,8 +33,6 @@ public class SERP extends ParentPage {
     public WebElement resultCount;
 
     List<WebElement> keywordTextInVacantionsTitle=webDriver.findElements(By.xpath("//*[@id='h2Position']/b"));
-    List<WebElement> autocompleteSuggestion=webDriver.findElements(By.xpath("//div[@class='autocomplete-suggestion']"));
-
 
     public void openPage() {
         try {
@@ -50,15 +48,7 @@ public class SERP extends ParentPage {
             Assert.assertEquals(tmp,tmp.contains(title));
         }
     }
-    public void autocompeteSuggestionClick(String title){
-        for(WebElement element: autocompleteSuggestion){
-            String tmp=element.getText();
-            if(tmp==title){
-                element.click();
-                break;
-            }
-        }
-    }
+
     public void resultVacantionsList(int limitCount, String text){
         int count=0;
         for(WebElement element: keywordTextInVacantionsTitle){
