@@ -27,5 +27,4 @@ public class ParentPage{
         PageFactory.initElements(webDriver, this);
         actionsWithElements = new ActionsWithElements(webDriver);
     }
-
 }
