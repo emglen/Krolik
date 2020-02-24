@@ -1,11 +1,13 @@
 package pages;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import parentPage.ParentPage;
 
+import java.util.List;
 import java.util.Properties;
 
 public class SERP extends ParentPage {
@@ -25,6 +27,8 @@ public class SERP extends ParentPage {
     public WebElement crazyPopupYesButton;
     @FindBy (xpath = "//span[@class='button disagree_button disagree_button-js']")
     public WebElement crazyPopupNoButton;
+    List<WebElement> keywordTextInVacantionsTitle=webDriver.findElements(By.xpath("//*[@id='h2Position']/b"));
+
 
     public void openPage() {
         try {
@@ -32,6 +36,12 @@ public class SERP extends ParentPage {
         } catch (Exception e) {
             Assert.fail("Can not work with browser");
         }
+    }
 
+    public void titleContainsKeyword(String title){
+        for(WebElement element: keywordTextInVacantionsTitle){
+            String tmp=element.getText();
+            Assert.assertEquals(tmp,tmp.contains(title));
+        }
     }
 }

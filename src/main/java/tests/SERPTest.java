@@ -14,5 +14,5 @@ public class SERPTest extends AbstractParentTest {
         serp.keyWordField.sendKeys("QA");
         serp.submitSearchButton.click();
         serp.crazyPopupNoButton.click();
-//   Assert.assertTrue();
+        serp.titleContainsKeyword(serp.keyWordField.getText());
 }}
