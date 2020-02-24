@@ -39,11 +39,4 @@ public class SERP extends ParentPage {
         actionsWithElements.clearFields(keyWordField);
     }
 
-    public void inputKeyword() {
-        actionsWithElements.typeText(keyWordField,"QA");
-    }
-
-    public void submitSearch() {
-        actionsWithElements.clickElement(submitSearchButton);
-    }
 }
