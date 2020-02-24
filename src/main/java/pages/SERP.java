@@ -6,8 +6,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import parentPage.ParentPage;
 
+import java.util.Properties;
+
 public class SERP extends ParentPage {
     public SERP(WebDriver webDriver, String partUrl) {
+        super(webDriver);
+    }
+    public SERP(WebDriver webDriver) {
         super(webDriver);
     }
     @FindBy(xpath = "//input[@id='tbKeywords']")

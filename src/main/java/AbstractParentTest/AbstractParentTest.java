@@ -21,10 +21,9 @@ public class AbstractParentTest {
     WebDriver webDriver;
     Logger logger = Logger.getLogger(getClass());
     protected MainPage mainPage;
-    protected SERP serp;
+    public SERP serp;
     public ParentPage parentPage;
-    protected static ConfigProperties configProperties =
-            ConfigFactory.create(ConfigProperties.class);
+    ConfigProperties configProperties = ConfigFactory.create(ConfigProperties.class);
 
     @Before
     public void setUp(){
@@ -36,7 +35,8 @@ public class AbstractParentTest {
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         parentPage = new ParentPage (webDriver);
-//        mainPage = new MainPage(webDriver);
+        serp = new SERP(webDriver);
+        //        mainPage = new MainPage(webDriver);
 //        cartPage = new CartPage(webDriver);
         //homePage = new HomePage(webDriver);
         //sparePage = new SparePage(webDriver);
@@ -49,7 +49,7 @@ public class AbstractParentTest {
         webDriver.quit();
     }
 
-//    protected void checkExpectedResult(String message, boolean actualResult) {
-//        Assert.assertEquals(message, true, actualResult);
-//    }
+    protected void checkExpectedResult(String message, boolean actualResult) {
+        Assert.assertEquals(message, true, actualResult);
+    }
 }
