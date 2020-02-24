@@ -21,6 +21,10 @@ public class SERP extends ParentPage {
     public WebElement regionField;
     @FindBy (xpath = "//input[@id='lbSearch']")
     public WebElement submitSearchButton;
+    @FindBy (xpath = "//span[@class='button agree_button colored_button agree_button-js']")
+    public WebElement crazyPopupYesButton;
+    @FindBy (xpath = "//span[@class='button disagree_button disagree_button-js']")
+    public WebElement crazyPopupNoButton;
 
     public void openPage() {
         try {
