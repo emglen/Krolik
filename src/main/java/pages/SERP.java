@@ -34,9 +34,4 @@ public class SERP extends ParentPage {
         }
 
     }
-
-    public void clearFields(WebElement element) {
-        actionsWithElements.clearFields(keyWordField);
-    }
-
 }
