@@ -8,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import parentPage.ParentPage;
 
 import java.util.List;
-import java.util.Properties;
 
 public class SERP extends ParentPage {
     public SERP(WebDriver webDriver, String partUrl) {
@@ -49,18 +48,22 @@ public class SERP extends ParentPage {
         }
     }
 
-    public void resultVacantionsList(int limitCount, String text){
+    public boolean resultVacantionsList(int limitCount, String text){
         int count=0;
+        boolean result;
         for(WebElement element: keywordTextInVacantionsTitle){
             String tmp=element.getText();
             if(tmp.contains(text)){
-                if(count<limitCount){
                     count++;
-                }
-                else{
-                    break;
-                }
             }
+        }
+        if(limitCount<=count){
+            result=true;
+            return result;
+        }
+        else{
+            result=false;
+            return result;
         }
     }
 }

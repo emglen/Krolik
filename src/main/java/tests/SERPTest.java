@@ -16,7 +16,7 @@ public class SERPTest extends AbstractParentTest {
         serp.submitSearchButton.click();
         serp.crazyPopupNoButton.click();
         serp.titleContainsKeyword(serp.keyWordField.getText());
-        serp.resultVacantionsList(40, "QA");
+        Assert.assertTrue(serp.resultVacantionsList(3,"QA"));
         String titleResultText=serp.resultTitle.getText();
         Assert.assertTrue(titleResultText.contains(serp.keyWordField.getText()));
         Assert.assertTrue(serp.resultCount.isDisplayed());
